@@ -27,7 +27,7 @@ footprint = geojson_to_wkt(read_geojson('map.geojson'))
 
 #fecth data form sentinelsat catalog
 '''
-api = SentinelAPI('deinic', 'N1K0l@sentinel', 'https://apihub.copernicus.eu/apihub')
+api = SentinelAPI('username', 'password', 'https://apihub.copernicus.eu/apihub')
 
 products = api.query(footprint,
                      date = ('20211215', '20211217'),
