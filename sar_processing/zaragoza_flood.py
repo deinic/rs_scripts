@@ -1,6 +1,5 @@
 import matplotlib.pyplot as plt
 import numpy as np
-import os
 import time
 
 from sentinelsat import SentinelAPI, read_geojson, geojson_to_wkt
@@ -59,7 +58,6 @@ proj= """GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.25722356
 
 # Invoke an HasMap object for defining parameters in each stage
 parameters = HashMap()
-
 
 #OrbitFile
 
