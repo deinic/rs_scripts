@@ -1,14 +1,11 @@
-
-from sentinelsat import SentinelAPI, read_geojson, geojson_to_wkt
-
 import matplotlib.pyplot as plt
 import numpy as np
 import os
 import time
+
+from sentinelsat import SentinelAPI, read_geojson, geojson_to_wkt
+
 import snappy
-
-
-
 from snappy import jpy
 from snappy import ProductIO
 from snappy import Product
@@ -26,7 +23,7 @@ start = time.asctime( time.localtime(time.time()) )
 footprint = geojson_to_wkt(read_geojson('map.geojson'))
 
 #fecth data form sentinelsat catalog
-'''
+
 api = SentinelAPI('username', 'password', 'https://apihub.copernicus.eu/apihub')
 
 products = api.query(footprint,
@@ -38,11 +35,10 @@ products_df = api.to_dataframe(products)
 
 
 # download first results from the search
-#api.download(products_df['uuid'][0])
+api.download(products_df['uuid'][0])
 
+filename=products_df['title'][0]+'.zip' 
 
-filename=products_df['title'][0]+'.zip' '''
-filename='S1B_IW_GRDH_1SDV_20211216T180247_20211216T180312_030054_0396AA_5E0C.zip'
 # Display some information from file
 
 product = ProductIO.readProduct(filename)
